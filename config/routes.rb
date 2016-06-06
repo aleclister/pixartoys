@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'toys/name'
+
+  get 'toys/movie'
+
+  get 'toys/character'
+
   devise_for :users
   root to: 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
