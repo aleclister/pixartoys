@@ -2,3 +2,35 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+.img-home img {
+  height: 200px;
+  width: 200px;
+  margin: 20px 0;
+}
+
+.content h4{
+  padding-top: 50px;
+}
+
+.home-content {
+  padding: 90px 0;
+}
+
+.btn-medium {
+  background: #9B7D5F;
+  color: #361712;
+  border: 3px solid #361712;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: bold;
+  opacity: 0.8;
+}
+.btn-medium:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: white;
+}
+
+.banner-content h1{
+font-size: 60px;
+}
