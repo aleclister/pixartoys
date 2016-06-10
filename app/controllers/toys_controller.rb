@@ -28,7 +28,7 @@ class ToysController < ApplicationController
 
   private
 
-  def camera_params
+  def toy_params
     params.require(:toy).permit(:brand, :category, :description, :price, :photo)
   end
 end

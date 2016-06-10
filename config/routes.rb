@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
-  get 'toys/name'
-
-  get 'toys/movie'
-
-  get 'toys/character'
-
   devise_for :users
   root to: 'pages#home'
+
+  resources :movies, only: [:index, :show]
+  resources :toys, only: [:index, :show]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
