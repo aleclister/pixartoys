@@ -11,7 +11,6 @@ class ToysController < ApplicationController
 
   def create
     @toy = Toy.new(toy_params)
-    @user = User.find(params[:user_id])
     redirect_to toys_path
   end
 
