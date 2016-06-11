@@ -1,3 +1,3 @@
 class Toy < ActiveRecord::Base
-  belongs_to :movie
+  has_many :movie
 end

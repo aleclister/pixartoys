@@ -16,12 +16,6 @@ class MoviesController < ApplicationController
     @movie = Movie.new
   end
 
-  def edit
-  end
-
-  def update
-  end
-
   private
 
   def movie_params

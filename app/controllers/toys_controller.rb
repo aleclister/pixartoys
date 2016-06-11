@@ -11,24 +11,16 @@ class ToysController < ApplicationController
 
   def create
     @toy = Toy.new(toy_params)
-    @user = User.find(params[:user_id])
     redirect_to toys_path
   end
 
   def new
-    @user = User.find(params[:user_id])
     @toy = Toy.new
-  end
-
-  def edit
-  end
-
-  def update
   end
 
   private
 
   def toy_params
-    params.require(:toy).permit(:brand, :category, :description, :price, :photo)
+    params.require(:toy).permit(:name, :movie, :description, :price)
   end
 end
