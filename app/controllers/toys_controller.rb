@@ -1,6 +1,4 @@
 class ToysController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
-
   def index
     @toys = Toy.all
   end
@@ -21,6 +19,6 @@ class ToysController < ApplicationController
   private
 
   def toy_params
-    params.require(:toy).permit(:name, :movie, :description, :price)
+    params.require(:toy).permit(:name, :movie, :character, :price, :description)
   end
 end
