@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
+  mount Attachinary::Engine => "/attachinary"
   root to: 'pages#home'
 
   resources :movies, only: [:index, :show]
-  resources :toys, only: [:index, :show]
+  resources :toys, only: [:new, :create, :edit, :update, :destroy]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

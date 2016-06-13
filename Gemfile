@@ -8,6 +8,11 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'redis'
+gem 'cloudinary'
+gem 'carrierwave'
+gem "attachinary"
+gem "jquery-fileupload-rails"
+gem "coffee-rails"
 
 gem 'sass-rails'
 gem 'jquery-rails'
@@ -24,8 +29,8 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
-  
-  
+
+
 end
 
 group :production do

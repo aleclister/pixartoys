@@ -1,1 +1,5 @@
 <h1>This toy</h1>
+
+<% if @toy.photo? %>
+  <%= cl_image_tag @toy.photo.path, width: 200, height: 300, crop: :fill %>
+<% end %>
