@@ -1,1 +1,9 @@
-<p>this movie</p>
+<h1><%= @movie.name %></h1>
+
+<p>Descrition: <%= @movie.description %></p>
+<p>Released on <%= @movie.release_date %></p>
+<p>Rating: <%= @movie.rating %></p>
+
+<% if @movie.photo? %>
+  <%= cl_image_tag @movie.photo.path, width: 200, height: 300, crop: :fill %>
+<% end %>

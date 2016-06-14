@@ -7,13 +7,14 @@ class ToysController < ApplicationController
     @toy = Toy.find(params[:id])
   end
 
-  def create
-    @toy = Toy.new(toy_params)
-    redirect_to toys_path
-  end
-
   def new
     @toy = Toy.new
+  end
+
+  def create
+    @toy = Toy.new(toy_params)
+    @toy.save
+    redirect_to toys_path
   end
 
   private

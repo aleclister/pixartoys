@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
   root to: 'pages#home'
 
-  resources :movies, only: [:index, :show]
-  resources :toys, only: [:new, :create, :edit, :update, :destroy]
+  resources :movies
+  resources :toys
 
 
   # The priority is based upon order of creation: first created -> highest priority.
