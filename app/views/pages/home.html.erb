@@ -8,46 +8,48 @@
 <div class="bg-grey">
   <div class="container">
     <div class="row">
+    <h1 class="text-center">Pixar movies</h1>
+    <% @movies.each do |movie| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
+      <% if movie.photo? %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path movie.photo.path %>);">
+          <div class="card-category"><p><%= movie.rating %></p></div>
+          <div class="card-description"><h2><%= movie.name %></h2></div>
+          <a class="card-link" href="<%= movie_path(movie) %>" ></a>
+        </div>
+      <% else %>
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= asset_url 'cars.jpg' %>);">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2>Cars</h2>
-            <p>Very cool stuff, useful and smart</p>
-          </div>
-          <a class="card-link" href="<%= link_to root_path %>" ></a>
+          <div class="card-category"><p><%= movie.rating %></p></div>
+          <div class="card-description"><h2><%= movie.name %></h2></div>
+          <a class="card-link" href="<%= movie_path(movie) %>" ></a>
         </div>
+      <% end %>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= asset_url 'inside-out-characters.jpg' %>);">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2>Some stuff</h2>
-            <p>Very cool stuff, useful and smart</p>
-          </div>
-          <a class="card-link" href="<%= link_to root_path %>" ></a>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= asset_url 'Toy-Story-3-Characters.jpg' %>);">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2>Toy Story</h2>
-            <p>Very cool stuff, useful and smart</p>
-          </div>
-          <a class="card-link" href="<%= link_to root_path %> "></a>
-        </div>
-      </div>
+    <% end %>
     </div>
   </div>
 </div>
 
-<div class="container text-center">
-  <div class="home-content">
-    <h1>Create your own movies</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi quisquam itaque temporibus commodi soluta deleniti possimus eos quod amet nobis, ducimus, mollitia quae sit eveniet dolor quas numquam, beatae id.</p>
-    <br>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia modi nemo optio harum ullam aliquid perspiciatis sint eligendi! Voluptatum voluptatibus maxime iure asperiores, vel aliquam aut minus ut, laborum perferendis.</p>
+<div class="container">
+  <div class="row">
+  <h1 class="text-center">Popular Pixar Toys</h1>
+  <% @toys.each do |toy| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+    <% if toy.photo? %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path toy.photo.path %>);">
+        <div class="card-category"><p><%= toy.character %></p></div>
+        <div class="card-description"><h2><%= toy.name %></h2></div>
+        <a class="card-link" href="<%= toy_path(toy) %>" ></a>
+      </div>
+    <% else %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= asset_url 'cars.jpg' %>);">
+        <div class="card-category"><p><%= toy.character %></p></div>
+        <div class="card-description"><h2><%= toy.name %></h2></div>
+        <a class="card-link" href="<%= toy_path(toy) %>" ></a>
+      </div>
+    <% end %>
+    </div>
+  <% end %>
   </div>
 </div>
 
