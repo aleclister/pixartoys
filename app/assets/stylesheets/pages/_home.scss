@@ -34,3 +34,34 @@
 .banner-content h1{
 font-size: 60px;
 }
+
+.fa-angle-down {
+  position: absolute;
+  opacity: 0.6;
+  bottom: 0;
+  -webkit-animation: jump 1.5s infinite;
+          animation: jump 1.5s infinite;
+}
+
+@-webkit-keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 10px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 10px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
